@@ -8,6 +8,7 @@ menu = [
     {'title': 'About us', 'url_name': 'about'},
     {'title': 'Add a story', 'url_name': 'add_page'},
     {'title': 'Feedback', 'url_name': 'contact'},
+    {'title': 'Map', 'url_name': 'beer_map'}
     # {'title': 'Log in', 'url_name': 'login'}
 ]
 

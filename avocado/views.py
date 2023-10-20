@@ -122,6 +122,11 @@ def breweries(request):
     return render(request, 'avocado/breweries.html', {'menu': menu, 'title': 'Breweries'})
 
 
+def beer_map(request):
+    countries = Country.objects.all()
+    return render(request, 'avocado/beer_map.html', {'menu': menu, 'title': 'Map', 'countries': countries})
+
+
 def about(request):
     return render(request, 'avocado/about.html', {'menu': menu, 'title': 'About us'})
 

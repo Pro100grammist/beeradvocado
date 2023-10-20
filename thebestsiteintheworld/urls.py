@@ -40,4 +40,3 @@ if settings.DEBUG:
 
 
 handler404 = page_not_found
-

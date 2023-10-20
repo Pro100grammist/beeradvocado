@@ -33,6 +33,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Beer, BeerAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Country)
 
 admin.site.site_title = 'adminpanel'
 admin.site.site_header = 'adminpanel beeradvocado.com'

@@ -1,6 +1,12 @@
 {% extends 'avocado/base.html' %}
+{% load static %}
 
 {% block content%}
-<h1>{{ title }}</h1>
-<p>Breweries on the world map</p>
+<link rel="stylesheet" type="text/css" href="{% static 'avocado/css/map.css' %}">
+
+<div class="background-image" style="background-image: url('{% static 'avocado/images/beer_world_map.jpg' %}');">
+  <!-- Ваш контент страницы здесь -->
+</div>
+
+<script src="{% static 'avocado/js/background_zoom.js' %}"></script>
 {% endblock %}

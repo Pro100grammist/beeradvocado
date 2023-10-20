@@ -7,6 +7,7 @@ from .views import *
 urlpatterns = [
     path('', cache_page(60)(BeerHome.as_view()), name='home'),  # index
     path('breweries/', breweries, name='breweries'),
+    path('beer_map/', beer_map, name='beer_map'),
     path('about/', about, name='about'),
     path('addpage/', AddPage.as_view(), name='add_page'),
     path('contact/', ContactFormView.as_view(), name='contact'),

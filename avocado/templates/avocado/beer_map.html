@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beer Map</title>
+
+    <link rel="stylesheet" href="../../static/avocado/css/map.css">
+</head>
+<body>
+    <h1>World Wide Beer</h1>
+    <div class="container">
+        <a href="/" class="home-link">Home</a>
+
+        <div class="zoom-img">
+            <div class="zoom-img-block">
+                <a href="../../static/avocado/images/beer_world_map.jpg" class="zoom-img-item">
+                    <div class="zoom-img-cursor"></div>
+                    <img src="../../static/avocado/images/beer_world_map.jpg" alt="">
+                </a>
+            </div>
+            <div class="zoom-img-overlay"></div>
+        </div>
+    </div>
+
+
+    <div class="flags">
+        <table>
+            <tr>
+                {% for country in countries %}
+                    <td>
+                        {% if country.flag %}
+                            <img src="{{ country.flag.url }}" alt="{{ country.title }}" class="flag-image">
+                        {% endif %}
+                        <p>{{ country.title }}</p>
+                    </td>
+                    {% if forloop.counter|divisibleby:7 %}
+                        </tr><tr>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../../static/avocado/js/map_script.js"></script>
+    
+</body>
+</html>

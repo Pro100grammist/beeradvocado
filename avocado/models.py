@@ -39,3 +39,17 @@ class Beer(models.Model):
         verbose_name_plural = 'Beer brands'
         ordering = ['title', 'time_create']
 
+
+class Country(models.Model):
+    title = models.CharField(max_length=255)
+    flag = models.ImageField(upload_to='flags/%Y/%m/%d/', blank=True)
+    top_beer = models.ImageField(upload_to='labels/%Y/%m/%d/', blank=True)
+    content = models.TextField(blank=True)
+    is_published = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['title']
+

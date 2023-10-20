@@ -9,6 +9,15 @@
 	<link rel="shortcut icon" href="{% static 'avocado/images/main.ico' %}" type="image/x-icon"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="{% static 'avocado/js/btn_script.js' %}"></script>
+	<script>
+		window.addEventListener('resize', function() {
+		    if (window.innerWidth < 1080) {
+		        document.querySelector('.left-chapters').style.display = 'none';
+		    } else {
+		        document.querySelector('.left-chapters').style.display = 'block';
+		    }
+		});
+	</script>
 	<style>
     .image-button {
       display: inline-block;
@@ -53,6 +62,7 @@
 <tr>
 <!-- Sidebar left -->
 	<td valign="top" class="left-chapters">
+		<button id="toggle-sidebar">Hide sidebar</button>
 	<ul id="leftchapters">
 		{% if cat_selected == 0 %}
 			<li class="selected">All categories</li>
@@ -77,7 +87,7 @@
 			<img src="{% static 'avocado/images/real_ale_craft_beer_yt.png' %}" alt="Image Description"></a>
 		</li>
 	</ul>
-</td>
+	</td>
 <!-- Sidebar's end -->
 <td valign="top" class="content">
 	<!-- breadcrumbs -->
@@ -126,5 +136,7 @@
 	</div>
 </td></tr></table>
 <!-- End of footer & page-->
+
+
 </body>
 </html>
